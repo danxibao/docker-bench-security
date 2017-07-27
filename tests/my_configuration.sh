@@ -40,4 +40,25 @@ else
 fi
 
 # 03
-check_03="03  - Ensure jdk1.8 /usr/bin/jdk1.8 exist"
+target_path='/usr/bin/jdk1.8'
+check_03="03  - Ensure jdk1.8 $target_path exist"
+if [ -d "$target_path" ]; then  
+¡¡pass "$check_03"
+	info "     * $target_path exist"
+else
+	info "$check_03"
+	warn "     * $target_path doesn't exist, verify does it need to install as deemed necessary"
+fi  
+
+
+# 04
+target_proc='lxcfs'
+check_04="04  - Ensure process $target_proc is running"
+ps -ef|grep $target_proc|grep -v grep >/dev/null 2>&1;
+if [ $? -eq 0 ]; then
+	pass '$check_04'
+	info "     * $target_proc is running"
+else
+	info "$check_04"
+	warn "     * $target_proc is not running, verify does it need to start as deemed necessary"
+fi
