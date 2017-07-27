@@ -91,10 +91,10 @@ main () {
   for test in tests/*.sh
   do
 #     . ./"$test"
-		echo test
+		echo $test
   done
   
-  . ./my_configuration.sh
+  . .tests/my_configuration.sh
 }
 
 main "$@"
