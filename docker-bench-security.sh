@@ -94,7 +94,7 @@ main () {
 		echo $test
   done
   
-  . .tests/my_configuration.sh
+  . ./tests/my_configuration.sh
 }
 
 main "$@"
