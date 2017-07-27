@@ -22,4 +22,4 @@ else
   info "     * Check with your operating system vendor for support and security maintenance for Docker"
 fi
 
-check_02=
+check_02="02  - Ensure docker version >= $target_version"
