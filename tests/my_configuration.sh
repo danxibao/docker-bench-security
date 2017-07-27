@@ -29,15 +29,15 @@ check_02="02  - Ensure kernel version equal to $target_kernel_version"
 
 kernel_version=$(uname -r)
 
-if [ "$target_kernel_verison" != "$kernel_verison" ];then
+if [ "$target_kernel_verison" = "$kernel_verison" ];then
+	pass "$check_02"
+	info "     * Using $kernel_version which is up to date"
+  info "     * Check with your operating system vendor for support and security maintenance for Docker"
+else
 	info "$check_02"
 	warn "     * Using $kernel_version, verify is it up to date as deemed necessary"
 	info "     * Your operating system vendor may provide support and security maintenance for Docker"
 
-else
-	pass "$check_02"
-	info "     * Using $docker_version which is up to date"
-  info "     * Check with your operating system vendor for support and security maintenance for Docker"
 fi
 
 # 03
