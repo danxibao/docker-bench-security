@@ -17,10 +17,6 @@ pass () {
   printf "%b\n" "${bldgrn}[PASS]${txtrst} $1" | tee -a "$logger"
 }
 
-error(){
-	printf "%b\n" "${bldred}[ERROR]${txtrst} $1" | tee -a "$logger"
-}
-
 warn () {
   printf "%b\n" "${bldred}[WARN]${txtrst} $1" | tee -a "$logger"
 }
