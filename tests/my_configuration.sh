@@ -22,8 +22,7 @@ docker_version_check(){
   	info "     * Check with your operating system vendor for support and security maintenance for Docker"
 	fi
 }
-
-version_check('1.11')
+version_check '1.11'
 
 
 # 02
@@ -43,7 +42,7 @@ kernel_version_check(){
 		info "     * Your operating system vendor may provide support and security maintenance for Docker"
 	fi
 }
-kernel_version_check('3.10.0-514.16.1.el7.ctrip.x86_64')
+kernel_version_check '3.10.0-514.16.1.el7.ctrip.x86_64'
 
 # 03
 path_check(){
@@ -57,7 +56,7 @@ path_check(){
 		warn "     * $target_path doesn't exist, verify does it need to install as deemed necessary"
 	fi  
 }
-path_check('/usr/bin/jdk1.8')
+path_check '/usr/bin/jdk1.8'
 
 # 04
 proc_check(){
@@ -73,4 +72,4 @@ proc_check(){
 	fi
 }
 
-proc_check('lxcfs')
+proc_check 'lxcfs'
