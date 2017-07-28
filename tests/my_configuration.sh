@@ -81,6 +81,6 @@ proc_check(){
 
 #proc_check '$proc'
 for proc in ${proc_group[@]};do
-    path_check "$proc"
+    proc_check "$proc"
 #		echo $test
 done

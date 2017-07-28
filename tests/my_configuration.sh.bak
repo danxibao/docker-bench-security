@@ -79,7 +79,7 @@ proc_check(){
 	fi
 }
 
-proc_check '$proc'
+#proc_check '$proc'
 for proc in ${proc_group[@]};do
     path_check "$proc"
 #		echo $test
