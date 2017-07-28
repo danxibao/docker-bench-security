@@ -74,4 +74,4 @@ proc_check(){
 	fi
 }
 
-proc_check '$jdk_path'
+proc_check '$proc'
