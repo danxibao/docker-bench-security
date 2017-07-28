@@ -74,4 +74,4 @@ proc_check(){
 	fi
 }
 
-proc_check 'lxcfs'
+proc_check '$jdk_path'
