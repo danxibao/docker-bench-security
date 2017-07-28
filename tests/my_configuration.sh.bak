@@ -3,7 +3,7 @@
 logit ""
 info "My Configuration"
 
-source check.cfg
+source ../check.cfg
 
 # 01
 docker_version_check(){
