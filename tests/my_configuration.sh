@@ -6,7 +6,7 @@ info "My Configuration"
 
 # 01
 docker_version_check(){
-	target_docker_version='$1'
+	target_docker_version=$1
 	check_01="01  - Ensure docker version >= $target_docker_version"
 	docker_version=$(docker version | grep -i -A1 '^server' | grep -i 'version:' \
   	| awk '{print $NF; exit}' | tr -d '[:alpha:]-,')
@@ -22,12 +22,12 @@ docker_version_check(){
   	info "     * Check with your operating system vendor for support and security maintenance for Docker"
 	fi
 }
-version_check '1.11'
+docker_version_check '1.11'
 
 
 # 02
 kernel_version_check(){
-	target_kernel_version='$1'
+	target_kernel_version=$1
 	check_02="02  - Ensure kernel version equal to $target_kernel_version"
 
 	kernel_version=$(uname -r)
@@ -46,7 +46,7 @@ kernel_version_check '3.10.0-514.16.1.el7.ctrip.x86_64'
 
 # 03
 path_check(){
-	target_path='$1'
+	target_path=$1
 	check_03="03  - Ensure $target_path exist"
 	if [ -d "$target_path" ]; then  
 ¡¡	pass "$check_03"
@@ -60,7 +60,7 @@ path_check '/usr/bin/jdk1.8'
 
 # 04
 proc_check(){
-	target_proc='$1'
+	target_proc=$1
 	check_04="04  - Ensure process $target_proc is running"
 	ps -ef|grep $target_proc|grep -v grep >/dev/null 2>&1;
 	if [ $? -eq 0 ]; then
