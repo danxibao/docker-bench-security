@@ -3,7 +3,7 @@
 # Returns the absolute path of a given string
 abspath () { case "$1" in /*)printf "%s\n" "$1";; *)printf "%s\n" "$PWD/$1";; esac; }
 
-# Compares versions of software of the format X.Y.Z
+# Compares versions of software of the format X.Y.Z / X-Y-Z
 do_version_check() {
     [ "$1" = "$2" ] && return 10
 

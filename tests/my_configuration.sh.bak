@@ -35,13 +35,13 @@ kernel_version_check(){
 	
 	do_version_check "$target_kernel_version" "$kernel_version"
 	if [ $? -eq 11 ];then
-		pass "$check_02"
-		info "     * Using $kernel_version which is current"
-  	info "     * Check with your operating system vendor for support and security maintenance for Docker"
-	else
 		info "$check_02"
 		warn "     * Using $kernel_version, verify is it up to date as deemed necessary"
 		info "     * Your operating system vendor may provide support and security maintenance for Docker"
+	else
+		pass "$check_02"
+		info "     * Using $kernel_version which is current"
+  	info "     * Check with your operating system vendor for support and security maintenance for Docker"
 	fi
 }
 kernel_version_check "$kernel_version"
@@ -58,7 +58,12 @@ path_check(){
 		warn "     * $target_path doesn't exist, verify does it need to install as deemed necessary"
 	fi  
 }
-path_check "$jdk_path"
+
+for path in ${path_group[@]};do
+    path_check "$path"
+#		echo $test
+done
+#path_check "$jdk_path"
 
 # 04
 proc_check(){
@@ -75,3 +80,7 @@ proc_check(){
 }
 
 proc_check '$proc'
+for proc in ${proc_group[@]};do
+    path_check "$proc"
+#		echo $test
+done

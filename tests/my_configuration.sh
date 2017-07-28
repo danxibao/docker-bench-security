@@ -58,7 +58,12 @@ path_check(){
 		warn "     * $target_path doesn't exist, verify does it need to install as deemed necessary"
 	fi  
 }
-path_check "$jdk_path"
+
+for path in ${path_group[@]};do
+    path_check "$path"
+#		echo $test
+done
+#path_check "$jdk_path"
 
 # 04
 proc_check(){
@@ -74,4 +79,8 @@ proc_check(){
 	fi
 }
 
-proc_check '$proc'
+#proc_check '$proc'
+for proc in ${proc_group[@]};do
+    path_check "$proc"
+#		echo $test
+done
