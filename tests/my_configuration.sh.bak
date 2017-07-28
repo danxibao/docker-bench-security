@@ -50,7 +50,7 @@ kernel_version_check "$kernel_version"
 path_check(){
 	target_path=$1
 	check_03="03  - Ensure $target_path exist"
-	if [ -d "$target_path" ]; then  
+	if [ -d "$target_path" ] || [ -d "$target_path" ]; then  
 ¡¡	pass "$check_03"
 		info "     * $target_path exist"
 	else
@@ -81,6 +81,6 @@ proc_check(){
 
 #proc_check '$proc'
 for proc in ${proc_group[@]};do
-    path_check "$proc"
+    proc_check "$proc"
 #		echo $test
 done

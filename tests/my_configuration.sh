@@ -50,7 +50,7 @@ kernel_version_check "$kernel_version"
 path_check(){
 	target_path=$1
 	check_03="03  - Ensure $target_path exist"
-	if [ -d "$target_path" ]; then  
+	if [ -d "$target_path" ] || [ -f "$target_path" ]; then  
 ¡¡	pass "$check_03"
 		info "     * $target_path exist"
 	else
