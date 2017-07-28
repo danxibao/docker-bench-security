@@ -6,7 +6,7 @@ info "My Configuration"
 
 # 01
 docker_version_check(){
-	target_docker_version='$1'
+	target_docker_version=$1
 	check_01="01  - Ensure docker version >= $target_docker_version"
 	docker_version=$(docker version | grep -i -A1 '^server' | grep -i 'version:' \
   	| awk '{print $NF; exit}' | tr -d '[:alpha:]-,')
@@ -60,7 +60,7 @@ path_check '/usr/bin/jdk1.8'
 
 # 04
 proc_check(){
-	target_proc='$1'
+	target_proc=$1
 	check_04="04  - Ensure process $target_proc is running"
 	ps -ef|grep $target_proc|grep -v grep >/dev/null 2>&1;
 	if [ $? -eq 0 ]; then

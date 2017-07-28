@@ -14,7 +14,7 @@ docker_version_check(){
 	do_version_check "$target_docker_version" "$docker_version"
 	if [ $? -eq 11 ]; then
   	info "$check_01"
-  	error "     * Using $docker_version, verify is it up to date as deemed necessary"
+  	error "    * Using $docker_version, verify is it up to date as deemed necessary"
   	info "     * Your operating system vendor may provide support and security maintenance for Docker"
 	else
   	pass "$check_01"
