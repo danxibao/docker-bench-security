@@ -35,13 +35,13 @@ kernel_version_check(){
 	
 	do_version_check "$target_kernel_version" "$kernel_version"
 	if [ $? -eq 11 ];then
-		pass "$check_02"
-		info "     * Using $kernel_version which is current"
-  	info "     * Check with your operating system vendor for support and security maintenance for Docker"
-	else
 		info "$check_02"
 		warn "     * Using $kernel_version, verify is it up to date as deemed necessary"
 		info "     * Your operating system vendor may provide support and security maintenance for Docker"
+	else
+		pass "$check_02"
+		info "     * Using $kernel_version which is current"
+  	info "     * Check with your operating system vendor for support and security maintenance for Docker"
 	fi
 }
 kernel_version_check "$kernel_version"
