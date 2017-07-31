@@ -138,7 +138,7 @@ directory_path_check(){
 }
 
 for dir in ${directory_group[@]};do
-    a=${dir[0]}
-    b=${dir[1]}
+    a=$dir|cut -d ' ' -f 1
+    b=$dir|cut -d ' ' -f 2
     directory_path_check $a $b
 done
