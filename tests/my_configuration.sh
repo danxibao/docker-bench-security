@@ -131,7 +131,6 @@ directory_path_check(){
 	if [ -d "$target_path" ]; then  
 ¡¡	pass "$check_07"
 		info "     * $target_path exist"
-		if
 	else
 		info "$check_07"
 		warn "     * $target_path doesn't exist"
