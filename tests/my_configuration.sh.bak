@@ -142,4 +142,5 @@ for dir in ${directory_group[@]};do
     a=${dir[0]}
     b=${dir[1]}
     directory_path_check $a $b
+    
 done
