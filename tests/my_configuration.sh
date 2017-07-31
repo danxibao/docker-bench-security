@@ -125,8 +125,8 @@ done
 
 # 07
 directory_path_check(){
-	target_path=$1
-	target_owner=$2
+	target_path="$1"
+	target_owner="$2"
 	check_07="07  - Ensure $target_path exist, and the owner of the directory and all the files and directories in the directory is $target_owner"
 	if [ -d "$target_path" ]; then  
 ¡¡	pass "$check_07"
@@ -140,5 +140,5 @@ directory_path_check(){
 for dir in ${directory_group[@]};do
     a=echo $dir|cut -d ' ' -f 1 >/dev/null 2>&1;
     b=echo $dir|cut -d ' ' -f 2 >/dev/null 2>&1;
-    directory_path_check $a $b
+    directory_path_check "$a" "$b"
 done
