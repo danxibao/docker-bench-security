@@ -1,6 +1,6 @@
 #!/bin/sh
 # ------------------------------------------------------------------------------
-# Docker Host Bench v1.0.0
+# Docker Host Bench v1.1.0
 #
 # Docker, Inc. (c) 2015-
 #
@@ -56,7 +56,7 @@ if [ -z "$logger" ]; then
 fi
 
 yell "# ------------------------------------------------------------------------------
-# Docker Host Bench v1.0.0
+# Docker Host Bench v1.1.0
 #
 # Docker, Inc. (c) 2015-
 #
