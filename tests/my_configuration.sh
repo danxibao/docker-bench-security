@@ -114,7 +114,7 @@ user_account_check(){
   	info "     * $user_account exists"
 	else
   	info "$check_06"
-  	error "    * $docker_initial_para doesn't exist, verify does it need to create as deemed necessary"
+  	error "    * $user_account doesn't exist, verify does it need to create as deemed necessary"
 	fi
 	
 }
