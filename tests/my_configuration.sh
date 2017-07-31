@@ -127,7 +127,7 @@ done
 directory_path_check(){
 	target_path="$1"
 	target_owner="$2"
-	check_07="07  - Ensure $target_path exist, and the owner of the directory and all the files and directories in the directory is $target_owner"
+	check_07="07  - Ensure $target_path exist, and the owner of the directory and all the files and directories in the directory is $2"
 	if [ -d "$target_path" ]; then  
 ¡¡	pass "$check_07"
 		info "     * $target_path exist"
